@@ -131,12 +131,7 @@ Inference is handled in `Inference.ipynb`.
   ```
 3. Run all notebook cells.
 
-## Architecture Details
-### Generator (NAFNet)
-Defined in `models.py`. It replaces traditional non-linear activations with a logic-gate inspired mechanism: $$ \text{SimpleGate}(X, Y) = X \odot Y $$ This design (from Chu et al.) reduces computational complexity while maintaining global receptive fields.
-
-
-### Loss Function
+## Loss Function
 Defined in `losses.py` as a composite objective. The training objective combines:
 
   - Pixel reconstruction loss (L1 / Charbonnier-style)
@@ -147,15 +142,7 @@ Defined in `losses.py` as a composite objective. The training objective combines
 
 This combination balances numerical accuracy, edge sharpness, perceptual realism, and structural consistency.
 
-### Metrics
-During training and evaluation, the following metrics are used:
-
-  - LPIPS (perceptual similarity)
-  - SSIM (structural similarity)
-
-Metrics are computed using torchmetrics.
-
-Acknowledgments
+## Acknowledgments
 The generator architecture is inspired by the NAFNet / NAFSSR family of models introduced by Chu et al.
 Perceptual and structural metrics are implemented using torchmetrics.
 
