@@ -4,8 +4,6 @@ A high-performance deep learning framework for biological image restoration base
 
 This repository implements a hybrid restoration model targeting tasks such as **denoising** and **deblurring** in 2D biological images. The core idea is to leverage the computational efficiency of NAFNet as a generator while enhancing perceptual realism and high-frequency detail preservation through adversarial training and multi-term loss optimization.
 
-The framework supports both **fully supervised paired training** (Clean ↔ Noisy) and **self-supervised training** via on-the-fly synthetic degradation, making it suitable for real biological datasets where ground-truth clean images are scarce or unavailable.
-
 ---
 
 ## Description
@@ -40,7 +38,6 @@ The implementation is modular, research-oriented, and optimized for experimentat
 
 - **Dual Data Pipelines**
   - `dataloader.py`: paired datasets (Noisy, Ground Truth)
-  - `dataloader_selfsup.py`: self-supervised learning with synthetic Gaussian noise and blur
 
 - **Inference Optimization**
   - Automatic padding to multiples of 32 (NAFNet requirement)
