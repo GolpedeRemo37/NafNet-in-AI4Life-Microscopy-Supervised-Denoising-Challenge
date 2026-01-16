@@ -76,12 +76,9 @@ CUDA-enabled GPU is **strongly recommended** for training. Inference can run on 
 ```
 .
 ├── dataloader.py # Dataset class for paired (Noisy, GT) images
-├── dataloader_selfsup.py # Dataset class for self-supervised training with synthetic noise
 ├── losses.py # MasterLoss and auxiliary loss definitions (VGG, SSIM, GAN)
 ├── models.py # NAFNet generator and Deep Discriminator architectures
-├── Main_Notebook.ipynb # Main training notebook (training loop, logging, visualization)
-├── Inference.ipynb # Inference notebook with automatic padding and cropping
-└── training_visuals/ # Saved checkpoints and visual validation outputs
+├── Notebook_to_run.ipynb # Main training notebook (training loop, logging, visualization, and inference)
 ```
 ## Storage
 
@@ -101,10 +98,6 @@ Training is performed using `Main_Notebook.ipynb`.
    - Paired training (Noisy ↔ GT):
      ```python
      from dataloader import DenoisingDataset2D
-     ```
-   - Self-supervised training (clean images only):
-     ```python
-     from dataloader_selfsup import DenoisingDataset2D
      ```
 3. Configure dataset paths:
    ```python
